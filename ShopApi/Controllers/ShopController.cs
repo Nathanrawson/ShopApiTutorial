@@ -1,4 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OData.Query;
+using ShopApi.Data.EntityModels;
+using ShopApi.Data.Repositories.Interfaces;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,36 +11,46 @@ namespace ShopApi.Controllers
     [ApiController]
     public class ShopController : ControllerBase
     {
-        // GET: api/<ShopController>
+        private readonly IBaseRepository<ShopItem> _shopData;
+
+        public ShopController(IShopItemRepository shopData)
+        {
+            _shopData = shopData;
+        }
+
+        // GET: /<ShopController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IEnumerable<ShopItem> Get()
         {
-            return new string[] { "value1", "value2" };
+            return _shopData.GetAll();
         }
 
-        // GET api/<ShopController>/5
+        // GET /<ShopController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public ShopItem Get(Guid id)
         {
-            return "value";
+            return _shopData.GetById(id);
         }
 
-        // POST api/<ShopController>
+        // POST /<ShopController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] ShopItem shopItem)
         {
+            _shopData.Add(shopItem);
         }
 
-        // PUT api/<ShopController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        // PUT /<ShopController>
+        [HttpPut]
+        public void Put([FromBody] ShopItem shopItem)
         {
+            _shopData.Update(shopItem);
         }
 
-        // DELETE api/<ShopController>/5
+        // DELETE /<ShopController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete([FromRoute] Guid id)
         {
+            _shopData.Delete(id);
         }
     }
 }

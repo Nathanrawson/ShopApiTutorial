@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NathanRawson\\source\\repos\\ShopApi\\ShopApi\\ShopApi.csproj": {}
+    "C:\\Users\\beast\\source\\repos\\ShopApiTutorial\\ShopApi\\ShopApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NathanRawson\\source\\repos\\ShopApi\\ShopApi\\ShopApi.csproj": {
+    "C:\\Users\\beast\\source\\repos\\ShopApiTutorial\\ShopApi\\ShopApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NathanRawson\\source\\repos\\ShopApi\\ShopApi\\ShopApi.csproj",
+        "projectUniqueName": "C:\\Users\\beast\\source\\repos\\ShopApiTutorial\\ShopApi\\ShopApi.csproj",
         "projectName": "ShopApi",
-        "projectPath": "C:\\Users\\NathanRawson\\source\\repos\\ShopApi\\ShopApi\\ShopApi.csproj",
-        "packagesPath": "C:\\Users\\NathanRawson\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NathanRawson\\source\\repos\\ShopApi\\ShopApi\\obj\\",
+        "projectPath": "C:\\Users\\beast\\source\\repos\\ShopApiTutorial\\ShopApi\\ShopApi.csproj",
+        "packagesPath": "C:\\Users\\beast\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\beast\\source\\repos\\ShopApiTutorial\\ShopApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\NathanRawson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\beast\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,6 +44,24 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.OData": {
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.7, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.2.3, )"
@@ -63,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
